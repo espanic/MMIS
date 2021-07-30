@@ -18,9 +18,7 @@ class LoginPage extends StatelessWidget {
             customTextFormField("군번을 입력하세요."),
             SizedBox(height: 20),
             customTextFormField("비밀번호를 입력하세요."),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

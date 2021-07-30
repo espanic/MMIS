@@ -12,8 +12,8 @@ class SelectBox extends StatelessWidget {
         border: Border.all(width: 3, color: Colors.orange),
         borderRadius: BorderRadius.circular(20),
       ),
-      width: 150,
-      height: 150,
+      width: 120,
+      height: 120,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -21,7 +21,7 @@ class SelectBox extends StatelessWidget {
           Text(
             "${this.select}",
             style: TextStyle(
-              fontSize: 30,
+              fontSize: 23,
               fontWeight: FontWeight.bold,
             ),
           ),

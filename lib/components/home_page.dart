@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mmis/components/%EB%A9%94%EB%89%B4.dart';
+import 'package:mmis/components/banner.dart';
+import 'package:mmis/components/meal_image.dart';
+import 'package:mmis/components/our_pride.dart';
 import 'package:mmis/components/selection.dart';
 
 class Homepage extends StatelessWidget {
@@ -11,31 +14,35 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       drawer: Container(),
       appBar: customAppBar(),
-      body: Column(
-        children: [
-          SizedBox(height: 10),
-          Expanded(
-            flex: 1,
-            child: ListView(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              children: [
-                Menu("7월 29일 석식"),
-                SizedBox(width: 5),
-                Menu("7월 30일 조식"),
-                SizedBox(width: 5),
-                Menu("7월 31일 중식"),
-                SizedBox(width: 5),
-                Menu("8월 1일 석식"),
-                SizedBox(width: 5),
-                Menu("8월 2일 조식"),
-              ],
+              child: Row(
+                children: [
+                  Menu("7월 29일(목) 석식"),
+                  SizedBox(width: 5),
+                  Menu("7월 30일(금) 조식"),
+                  SizedBox(width: 5),
+                  Menu("7월 31일(토) 중식"),
+                  SizedBox(width: 5),
+                  Menu("8월 1일(일) 석식"),
+                  SizedBox(width: 5),
+                  Menu("8월 2일(월) 조식"),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Select(),
-          ),
-        ],
+            SizedBox(height: 40),
+            Select(),
+            SizedBox(height: 50),
+            MiddleBanner(),
+            SizedBox(height: 40),
+            OurPride(),
+            Expanded(child: MealImages()),
+          ],
+        ),
       ),
     );
   }
@@ -43,7 +50,7 @@ class Homepage extends StatelessWidget {
   AppBar customAppBar() {
     return AppBar(
       backgroundColor: Colors.orangeAccent,
-      title: Text("MMIS"),
+      title: Text("M M I S"),
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
